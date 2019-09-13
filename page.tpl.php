@@ -96,7 +96,6 @@
       </div>
     </div>
   </div>
-  </div>
 
   <div class="row py-5 d-flex justify-content-center" id="footer">
     <?php print $footer_message . $footer ?>
