@@ -1,0 +1,35 @@
+@media (min-width: 992px) {
+  header#header {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  header .header-main.stuck {
+    background-color: white;
+  }
+  header.header-v3 .header-main {
+    padding: 0;
+  }
+  #main-menu {
+    padding-right: 20px;
+  }
+}
+header.header-v3 {
+  margin-top: 1px;
+}
+.p-relative {
+  position: relative !important;
+}
+.header-v3 .header-main .branding,
+.header-v3 .stuck .branding {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.header-v3 .area-main-menu {
+  position: static;
+  padding-right: 20px;
+}
+.navigation {
+  clear: both;
+}
