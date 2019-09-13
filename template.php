@@ -134,20 +134,20 @@ function cds_theme_preprocess_user_login_block(&$variables)
   $variables['form']['name']['#attributes']['class'] = 'form-control';
   $variables['form']['links']['#value'] = '<hr class="login-hr">
   <div class="text-left">
-    <h6 class="font-weight-bold">Can' . "'" . 't login?</h6>
+  <h6 class="font-weight-bold">Can' . "'" . 't login?</h6>
   </div>
   <div class="item-list">
-    <ul class="login-order">
+  <ul class="login-order">
       <li class="first">
-        <a href=' . "$base_url/user/password" . ' title="Request new password via e-mail.">Forgot password</a>
+      <a href=' . "$base_url/user/password" . ' title="Request new password via e-mail.">Forgot password</a>
       </li>
       <li class="last">
-        <a href=' . "$base_url/user/register" . ' title="Create a new user account.">Join us</a>
+      <a href=' . "$base_url/user/register" . ' title="Create a new user account.">Join us</a>
       </li>
       <li>
-        <a href="#" >Contact us</a>
+      <a href="#" >Contact us</a>
       </li>
-    </ul>
-   </div>';
+      </ul>
+      </div>';
   $variables['rendered'] = drupal_render($variables['form']);
 }
