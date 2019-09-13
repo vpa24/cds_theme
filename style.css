@@ -189,9 +189,6 @@ dl {
   margin: 0.5em 0 1em 1.5em; /* LTR */
 }
 
-dl dt {
-}
-
 dl dd {
   margin: 0 0 0.5em 1.5em; /* LTR */
 }
@@ -358,8 +355,6 @@ table .form-submit {
 #header-region * {
   display: inline;
   line-height: 1.5em;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* Prevent the previous directive from showing the content of script elements in Mozilla browsers. */
@@ -711,8 +706,7 @@ ul.secondary li.active a {
   margin: 0 -26px 1.5em;
   padding: 1.5em 0;
 }
-#sidebar-left {
-}
+
 #sidebar-right .border-top {
   border-top: 8px solid #003a70 !important;
 }
@@ -730,9 +724,6 @@ ul.inline li {
   text-align: left; /* LTR */
 }
 
-.node .links ul.links li,
-.comment .links ul.links li {
-}
 .terms ul.links li {
   margin-left: 0;
   margin-right: 0;
