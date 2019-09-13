@@ -1194,6 +1194,9 @@ nav.primary ul {
   .col-sm-3 {
     padding-left: 5px;
   }
+  .col {
+    max-width: 63% !important;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   h5 {

@@ -61,7 +61,7 @@
     <div id="container" class="container-fluid">
       <div id="body" class="row">
         <?php if ($left) : ?>
-          <div id="sidebar-left" class="sidebar col-5 col-sm-3 col-md-3 col-lg-2 ml-3">
+          <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
             <?php if ($search_box) : ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
             <?php print $left ?>
           </div>
