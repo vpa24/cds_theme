@@ -22,12 +22,11 @@
               <div class="row">
                 <div class="col-md-2 col-xs-6 branding">
                   <?php
-                  echo $site_html;
                   if ($logo || $site_title) {
                     if ($logo) {
-                      print '<img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" />';
+                      global $base_url;
+                      print '<a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a>';
                     }
-                    print $site_html . '</a></h1>';
                   }
                   ?>
                 </div>
@@ -98,12 +97,11 @@
     </div>
   </div>
   </div>
+
   <div class="row py-5 d-flex justify-content-center" id="footer">
     <?php print $footer_message . $footer ?>
   </div>
   <!-- /layout -->
-
-  <?php print $closure ?>
 </body>
 
 </html>
