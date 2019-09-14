@@ -1295,3 +1295,7 @@ nav.primary ul {
 .shopping {
   font-size: 18px;
 }
+
+#node-2 .submitted {
+  display: none;
+}

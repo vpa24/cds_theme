@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
   <div id="wrapper">
 
     <div id="header" class="header-v3 enterprise">
@@ -50,9 +49,9 @@
                   <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
                 <?php endif; ?>
               </div>
+              <div class="shopping mx-3"><i class="fas fa-shopping-cart"></i></div>
               <?php
-              if ($search_box) : ?><div class="container-inline"><?php print $search_box ?></div><?php endif; ?>
-              <div class="shopping ml-3 mr-5"><i class="fas fa-shopping-cart"></i></div>
+              if ($search_box) : ?><div class="container-inline mr-5"><?php print $search_box ?></div><?php endif; ?>
             </nav>
           </div>
         </div>
