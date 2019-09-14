@@ -9,9 +9,10 @@
   <!--[if lt IE 7]>
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/102128dbc9.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,9 @@
                   <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
                 <?php endif; ?>
               </div>
-
+              <?php
+              if ($search_box) : ?><div class="container-inline"><?php print $search_box ?></div><?php endif; ?>
+              <div class="shopping ml-3 mr-5"><i class="fas fa-shopping-cart"></i></div>
             </nav>
           </div>
         </div>
@@ -62,7 +65,6 @@
       <div id="body" class="row">
         <?php if ($left) : ?>
           <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
-            <?php if ($search_box) : ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
             <?php print $left ?>
           </div>
         <?php endif; ?>

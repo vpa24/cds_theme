@@ -113,11 +113,16 @@ function phptemplate_get_ie_styles()
 
   return $iecss;
 }
+
 function cds_theme_theme()
 {
   return array(
     'user_login_block' => array(
       'template' => 'user-login-block',
+      'arguments' => array('form' => NULL),
+    ),
+    'search_theme_form' => array(
+      // Forms always take the form argument.
       'arguments' => array('form' => NULL),
     )
   );
@@ -150,4 +155,18 @@ function cds_theme_preprocess_user_login_block(&$variables)
       </ul>
       </div>';
   $variables['rendered'] = drupal_render($variables['form']);
+}
+
+function cds_theme_preprocess_page(&$vars)
+{
+  $vars['search_box'] = (theme_get_setting('toggle_search') ? '' : drupal_get_form('search_theme_form'));
+}
+function cds_theme_search_theme_form($form)
+{
+  unset($form['search_theme_form']['#title']);
+  $form['search_theme_form']['#attributes']['class'] = 'form-control';
+  $form['submit']['#attributes']['class'] = 'search-box';
+  $form['submit']['#value'] = html_entity_decode('&#xf002;');
+  $output .= drupal_render($form);
+  return $output;
 }
