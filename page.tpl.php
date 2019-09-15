@@ -9,9 +9,6 @@
   <!--[if lt IE 7]>
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/102128dbc9.js"></script>
 </head>
 
@@ -22,36 +19,25 @@
       <div class="header-main gv-sticky-menu front-page stuck">
         <div class="bb-container">
           <div class="header-main-inner p-relative">
-            <nav class="navbar navbar-expand-md navbar-light bg-white primary">
+            <nav id="cssmenu">
               <?php
               if ($logo || $site_title) {
                 if ($logo) {
                   global $base_url;
-                  print '<a href="' . $base_url . '" class="p-3 pl-4"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a>';
+                  print '<div class="logo col-md-2 col-xs-6 branding"><a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a></div>';
                 }
               }
               ?>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <?php if (isset($primary_links)) : ?>
-                  <ul class="navbar-nav ml-auto">
-                    <?php foreach ($primary_links as $link) : ?>
-                      <li class="nav-item"><?php
-                                                $href = $link['href'] == "<front>" ? base_path() : base_path() . drupal_get_path_alias($link['href']);
-                                                print "<a class='nav-link text-dark' href='" . $href . "'>" . $link['title'] . "</a>";
-                                                ?></li>
-                    <?php endforeach; ?>
-                  </ul>
-                <?php endif; ?>
-                <?php if (isset($secondary_links)) : ?>
-                  <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
-                <?php endif; ?>
-              </div>
-              <div class="shopping mx-3"><i class="fas fa-shopping-cart"></i></div>
+              <div id="head-mobile"></div>
+              <div class="button"></div>
               <?php
-              if ($search_box) : ?><div class="container-inline mr-5"><?php print $search_box ?></div><?php endif; ?>
+              print $main_menu_expanded;
+              ?>
+              <?php if (isset($secondary_links)) : ?>
+                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+              <?php endif; ?>
+
+              <div><?php print $search_box ?></div>
             </nav>
           </div>
         </div>
@@ -102,5 +88,3 @@
     <?php print $footer_message . $footer ?>
   </div>
 </body>
-
-</html>

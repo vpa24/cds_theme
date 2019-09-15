@@ -68,13 +68,6 @@ h6 {
   font-size: 110%;
 }
 
-ul,
-quote,
-code,
-fieldset {
-  margin: 0.5em 0;
-}
-
 hr {
   margin: 0;
   padding: 0;
@@ -83,19 +76,9 @@ hr {
   background: #5294c1;
 }
 
-ul {
-  margin: 0.5em 0 1em;
-  padding: 0;
-}
-
 ol {
   margin: 0.75em 0 1.25em;
   padding: 0;
-}
-
-ol li,
-ul li {
-  margin: 0.4em 0 0.4em 0.5em; /* LTR */
 }
 
 ul.menu,
@@ -109,13 +92,6 @@ ul.menu ul,
   margin-left: 0em; /* LTR */
 }
 
-ol li,
-ul li,
-ul.menu li,
-.item-list ul li,
-li.leaf {
-  margin: 0.15em 0 0.15em 0.5em; /* LTR */
-}
 .form-item {
   padding-right: 10px;
 }
@@ -138,14 +114,6 @@ li.leaf {
 ol li {
   padding: 0 0 0.3em;
   margin-left: 2em; /* LTR */
-}
-
-ul li.expanded {
-  background: transparent url(images/menu-expanded.gif) no-repeat 1px 0.35em; /* LTR */
-}
-
-ul li.collapsed {
-  background: transparent url(images/menu-collapsed.gif) no-repeat 0px 0.35em; /* LTR */
 }
 
 ul li.leaf a,
@@ -304,11 +272,6 @@ span.submitted,
 
 #center form {
   margin-bottom: 2em;
-}
-
-.form-button,
-.form-submit {
-  margin: 2em 0.5em 1em 0; /* LTR */
 }
 
 #dblog-form-overview .form-submit,
@@ -1298,4 +1261,20 @@ nav.primary ul {
 
 #node-2 .submitted {
   display: none;
+}
+.header-main .bb-container {
+  max-width: 1530px;
+}
+.header-main .bb-container {
+  padding-right: 100px;
+  padding-left: 100px;
+  max-width: 1800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.nav {
+  float: left;
+}
+.form-item {
+  margin-bottom: 0 !important;
 }

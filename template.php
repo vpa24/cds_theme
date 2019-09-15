@@ -160,6 +160,14 @@ function cds_theme_preprocess_user_login_block(&$variables)
 function cds_theme_preprocess_page(&$vars)
 {
   $vars['search_box'] = (theme_get_setting('toggle_search') ? '' : drupal_get_form('search_theme_form'));
+  $main_menu_tree = menu_tree_all_data('primary-links');
+  // Add the rendered output to the $main_menu_expanded variable
+  $vars['main_menu_expanded'] =  menu_tree_output($main_menu_tree);
+  $vars['main_menu_expanded'] =  str_replace('<ul class="menu">', '<ul>', $vars['main_menu_expanded']);
+  $vars['main_menu_expanded'] =  str_replace('<li class="leaf first">', '<li>', $vars['main_menu_expanded']);
+  $vars['main_menu_expanded'] =  str_replace('<li class="leaf first last">', '<li>', $vars['main_menu_expanded']);
+  $vars['main_menu_expanded'] =  str_replace('expanded', '', $vars['main_menu_expanded']);
+  $vars['main_menu_expanded'] =  str_replace('class="leaf"', '', $vars['main_menu_expanded']);
 }
 function cds_theme_search_theme_form($form)
 {
@@ -169,4 +177,9 @@ function cds_theme_search_theme_form($form)
   $form['submit']['#value'] = html_entity_decode('&#xf002;');
   $output .= drupal_render($form);
   return $output;
+}
+function cds_theme_menu_tree($tree, $menu_name = "")
+{
+
+  return '<ul class="nav">' . $tree . '</ul>';
 }
