@@ -168,6 +168,7 @@ function cds_theme_preprocess_page(&$vars)
   $vars['main_menu_expanded'] =  str_replace('<li class="leaf first last">', '<li>', $vars['main_menu_expanded']);
   $vars['main_menu_expanded'] =  str_replace('expanded', '', $vars['main_menu_expanded']);
   $vars['main_menu_expanded'] =  str_replace('class="leaf"', '', $vars['main_menu_expanded']);
+  $vars['main_menu_expanded'] =  str_replace('Buy', '<i class="fas fa-shopping-cart"></i>', $vars['main_menu_expanded']);
 }
 function cds_theme_search_theme_form($form)
 {

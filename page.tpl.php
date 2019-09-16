@@ -18,27 +18,29 @@
     <div id="header" class="header-v3 enterprise">
       <div class="header-main gv-sticky-menu front-page stuck">
         <div class="bb-container">
-          <div class="header-main-inner p-relative">
-            <nav id="cssmenu">
-              <?php
-              if ($logo || $site_title) {
-                if ($logo) {
-                  global $base_url;
-                  print '<div class="logo col-md-2 col-xs-6 branding"><a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a></div>';
-                }
+          <div class="header-main-inner p-relative row">
+            <?php
+            if ($logo || $site_title) {
+              if ($logo) {
+                global $base_url;
+                print '<div class="logo col-md-2 col-xs-6 branding"><a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a></div>';
               }
-              ?>
-              <div id="head-mobile"></div>
-              <div class="button"></div>
-              <?php
-              print $main_menu_expanded;
-              ?>
-              <?php if (isset($secondary_links)) : ?>
-                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
-              <?php endif; ?>
-
-              <div><?php print $search_box ?></div>
-            </nav>
+            }
+            ?>
+            <div class="col-md-10 col-xs-6">
+              <div class="main-menu">
+                <div class="navigation area-main-menu">
+                  <div class="gva-search-region search-region"><?php print $search_box ?></div>
+                  <nav id="cssmenu">
+                    <div id="head-mobile"></div>
+                    <div class="button"></div>
+                    <?php
+                    print $main_menu_expanded;
+                    ?>
+                  </nav>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
