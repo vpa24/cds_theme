@@ -16,12 +16,10 @@ body {
   font-size: 16px !important;
   line-height: 1.3 !important;
   font-weight: 400;
-  background-color: #f4f4f4 !important;
 }
 
 input {
   font: 12px/100% Verdana, sans-serif;
-  color: #494949;
 }
 
 textarea,
@@ -291,9 +289,6 @@ table .form-submit {
   margin-bottom: 2.5em;
 }
 
-#body {
-  background-color: #f4f4f4;
-}
 .block-user {
   padding: 5px;
   background-color: #fff;
@@ -344,7 +339,6 @@ table .form-submit {
 
 #wrapper #container #header {
   height: 100px;
-  background-color: #fff;
 }
 
 #wrapper #container #header #logo-floater {
@@ -400,9 +394,6 @@ body.sidebar-right #squeeze {
 }
 body.sidebars #squeeze {
   margin: 0 210px;
-}
-.login-form-custom {
-  padding-left: 10px;
 }
 .col-7,
 .col-2 {
@@ -1132,6 +1123,16 @@ table.system-status-report tr.ok th {
 nav.primary ul {
   font-size: 18px !important;
 }
+.search-box[type="submit"] {
+  font-family: FontAwesome;
+  display: inline;
+  border: 0;
+  background: none;
+  padding: 0;
+  font-size: 18px;
+  padding-left: 10px;
+  line-height: 3;
+}
 
 @media (max-width: 575.98px) {
   h5 {
@@ -1159,6 +1160,20 @@ nav.primary ul {
   .col {
     max-width: 63% !important;
   }
+  .header-main .bb-container {
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+  }
+  .search-box[type="submit"] {
+    margin-top: 0px !important;
+  }
+  #cssmenu > ul > li > a {
+    padding: 0px !important;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #000;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   h5 {
@@ -1183,6 +1198,39 @@ nav.primary ul {
   .col-sm-3 {
     padding-left: 5px;
   }
+  ul.menu,
+  .item-list ul {
+    margin: 0 !important;
+  }
+  ul.menu.open li {
+    background: #fff;
+  }
+  ul.menu.open li {
+    margin-top: -2px !important;
+  }
+  #cssmenu > ul > li > a {
+    padding: 0 0 0 5px !important;
+  }
+  #cssmenu .submenu-button {
+    height: 37px;
+    width: 37px;
+  }
+  #cssmenu li:hover > ul {
+    min-width: 200px;
+    left: auto;
+    padding: 0 !important;
+    background: #262626;
+  }
+  #cssmenu ul ul li a:hover {
+    color: #fff;
+    background: #262626;
+  }
+  ul.menu li {
+    margin: 0 !important;
+  }
+  .search-box[type="submit"] {
+    margin-top: 0px !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   h5 {
@@ -1204,8 +1252,8 @@ nav.primary ul {
     margin-left: 1em !important;
     margin-right: 1em !important;
   }
-  .header-main .bb-container {
-    padding-right: 0px !important;
+  .search-box[type="submit"] {
+    margin-top: 0px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -1236,17 +1284,7 @@ nav.primary ul {
 .container-inline label {
   display: inline-block;
 }
-.search-box[type="submit"] {
-  font-family: FontAwesome;
-  display: inline;
-  border: 0;
-  background: none;
-  padding: 0;
-  font-size: 18px;
-  padding-left: 10px;
-  margin-top: 7px;
-  line-height: 3;
-}
+
 #edit-search-theme-form-1-wrapper {
   display: none;
 }
@@ -1281,15 +1319,180 @@ nav.primary ul {
 .nav {
   float: left;
 }
-.form-item {
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-left: 30px;
-}
-.header-main.gv-sticky-menu.front-page.stuck {
-  background: #fff;
-}
 .header-v3 .stuck .gva-search-region {
   margin-top: 13px;
   float: right;
+  margin-right: -30px;
+}
+#primary-menu {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+ul li.leaf a,
+ul li.expanded a,
+ul li.collapsed a {
+  display: block;
+}
+#cssmenu {
+  float: right;
+}
+ul.menu {
+  margin-top: 0px !important;
+}
+.node h2,
+#center h2 {
+  display: none;
+}
+.menu.open li a {
+  padding: 0 0 0 6px !important;
+}
+.menu.open li:hover {
+  padding: 0 !important;
+}
+.menu.open li.leaf,
+li.expanded {
+  padding: 0 !important;
+}
+.menu.open li:hover,
+.menu.open li:hover > ul {
+  padding: 0 !important;
+}
+.menu.open .expanded.last.has-sub {
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid #000 !important;
+}
+/* .menu.open .expanded.last.has-sub i {
+  display: none;
+}
+.menu .expanded.last.has-sub a span {
+  display: none;
+} */
+.modal-body {
+  background: #000;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.modal.show {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+
+.modal-backdrop {
+  background: none;
+}
+.modal-dialog {
+  min-width: 700px;
+}
+.modal-content {
+  background: none !important;
+}
+.fixed {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+#header a,
+#header .search-box[type="submit"] {
+  color: #fff;
+}
+#header ul ul li a {
+  font-size: 13px;
+}
+#header {
+  background: none;
+}
+div#body {
+  background: #f4f4f4;
+}
+ul.menu li {
+  margin: 0px;
+}
+li.leaf {
+  padding: 0px;
+}
+
+#block-menu-menu-banner-links h5 {
+  display: none;
+}
+
+#block-menu-menu-banner-links {
+  height: 45px;
+  width: 100%;
+  background: #00193b;
+  opacity: 0.8;
+  margin-top: -45px;
+}
+#block-menu-menu-banner-links ul li:first-child {
+  float: left;
+  padding-left: 0px;
+}
+#block-menu-menu-banner-links ul li {
+  float: left;
+  padding-left: 25px;
+}
+#block-menu-menu-banner-links ul li a {
+  color: #fff;
+  line-height: 45px;
+  font-weight: 500;
+}
+#block-block-1 p {
+  margin-bottom: 0 !important;
+}
+li.leaf.last.myaccount {
+  position: relative;
+  float: right !important;
+}
+li.leaf.last.myaccount::before {
+  content: "\f007";
+  font-family: FontAwesome;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.bg-blue {
+  background: #003567;
+}
+#ceo-content h4 {
+  letter-spacing: -1px;
+}
+#ceo-content h2 {
+  display: block;
+}
+#ceo-content .col-2 {
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+#ceo-content span {
+  font-size: 15px;
+}
+.text-blue {
+  color: #003567;
+}
+.blue-border-top {
+  border-top: 7px solid #003567 !important;
+}
+.register-custom .form-item {
+  padding-bottom: 1px !important;
+  margin-bottom: 4px !important;
+  margin-top: 4px !important;
+}
+.user-login.col-6 {
+  -ms-flex: 0 0 49.5%;
+  flex: 0 0 49.5%;
+  max-width: 49.5%;
+  padding-right: 0;
+}
+.login-form-custom {
+  padding-right: 15px;
+  border-right: 2px solid #b4b4b4;
+}
+#edit-pass-2-wrapper.form-item {
+  padding-right: 0;
 }

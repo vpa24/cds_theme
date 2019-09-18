@@ -122,15 +122,19 @@ function cds_theme_theme()
       'arguments' => array('form' => NULL),
     ),
     'search_theme_form' => array(
-      // Forms always take the form argument.
       'arguments' => array('form' => NULL),
-    )
+    ),
+    'user_register' => array(
+      'template' => 'user-register',
+      'arguments' => array('form' => NULL),
+    ),
+
   );
 }
 function cds_theme_preprocess_user_login_block(&$variables)
 {
   global $base_url;
-  $variables['form']['submit']['#attributes']['class'] = 'btn btn-sm btn-danger';
+  $variables['form']['submit']['#attributes']['class'] = 'btn btn-sm btn-danger font-weight-bold';
   unset($variables['form']['name']['#title']);
   unset($variables['form']['pass']['#title']);
   $variables['form']['pass']['#attributes']['placeholder'] = 'Password';
@@ -162,13 +166,8 @@ function cds_theme_preprocess_page(&$vars)
   $vars['search_box'] = (theme_get_setting('toggle_search') ? '' : drupal_get_form('search_theme_form'));
   $main_menu_tree = menu_tree_all_data('primary-links');
   // Add the rendered output to the $main_menu_expanded variable
-  $vars['main_menu_expanded'] =  menu_tree_output($main_menu_tree);
-  $vars['main_menu_expanded'] =  str_replace('<ul class="menu">', '<ul>', $vars['main_menu_expanded']);
-  $vars['main_menu_expanded'] =  str_replace('<li class="leaf first">', '<li>', $vars['main_menu_expanded']);
-  $vars['main_menu_expanded'] =  str_replace('<li class="leaf first last">', '<li>', $vars['main_menu_expanded']);
-  $vars['main_menu_expanded'] =  str_replace('expanded', '', $vars['main_menu_expanded']);
-  $vars['main_menu_expanded'] =  str_replace('class="leaf"', '', $vars['main_menu_expanded']);
-  $vars['main_menu_expanded'] =  str_replace('Buy', '<i class="fas fa-shopping-cart"></i>', $vars['main_menu_expanded']);
+  $vars['primary_links'] =  menu_tree_output($main_menu_tree);
+  $vars['menu_header'] =  str_replace('Buy', '<i class="fas fa-shopping-cart"></i>', $vars['primary_links']);
 }
 function cds_theme_search_theme_form($form)
 {
@@ -179,8 +178,57 @@ function cds_theme_search_theme_form($form)
   $output .= drupal_render($form);
   return $output;
 }
-function cds_theme_menu_tree($tree, $menu_name = "")
+function cds_theme_preprocess_user_register(&$variables)
+{
+  //name
+  unset($variables['form']['account']['name']['#description']);
+  unset($variables['form']['account']['name']['#title']);
+  $variables['form']['account']['name']['#attributes']['placeholder'] = 'Username';
+  $variables['form']['account']['name']['#weight'] = 1;
+  //company
+  unset($variables['form']['Account information']['profile_company_name']['#title']);
+  $variables['form']['Account information']['profile_company_name']['#attributes']['placeholder'] = 'Company name';
+  $variables['form']['Account information']['profile_company_name']['#weight'] = 2;
+  //mail
+  unset($variables['form']['account']['mail']['#title']);
+  unset($variables['form']['account']['mail']['#description']);
+  $variables['form']['account']['mail']['#attributes']['placeholder'] = 'Supermicro Salesperson Email';
+  //pass1
+  unset($variables['form']['account']['pass']['pass1']['#title']);
+  $variables['form']['account']['pass']['pass1']['#attributes']['placeholder'] = 'Password';
+  $variables['form']['account']['pass']['pass1']['#weight'] = 3;
+  //pass 2
+  unset($variables['form']['account']['pass']['pass2']['#title']);
+  $variables['form']['account']['pass']['pass2']['#attributes']['placeholder'] = 'Confirm Password';
+  $variables['form']['account']['pass']['pass2']['#weight'] = 4;
+  $variables['form']['account']['name']['#attributes']['class'] =
+    $variables['form']['account']['mail']['#attributes']['class'] =
+    $variables['form']['account']['pass']['pass1']['#attributes']['class'] =
+    $variables['form']['account']['pass']['pass2']['#attributes']['class'] =
+    $variables['form']['Account information']['profile_company_name']['#attributes']['class'] = 'form-control';
+  unset($variables['form']['account']['pass']['#description']);
+  unset($variables['form']['account']['#type']);
+  unset($variables['form']['Account information']['#type']);
+  $variables['form']['submit']['#attributes']['class'] = 'btn btn-danger mt-4 font-weight-bold';
+  $variables['form']['submit']['#value'] = 'Register';
+
+  $variables['rendered'] = drupal_render($variables['form']);
+}
+function cds_theme_menu_tree($tree)
+{
+  return '<ul class="menu">' . $tree . '</ul>';
+}
+function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail = FALSE, $extra_class = NULL)
 {
 
-  return '<ul class="nav">' . $tree . '</ul>';
+  $class = ($menu ? 'expanded' : ($has_children ? 'collapsed' : 'leaf'));
+
+  if (!empty($extra_class))
+    $class .= ' ' . $extra_class;
+
+  if ($in_active_trail)
+    $class .= ' active-trail';
+
+  $class .= ' ' . preg_replace('/[^a-zA-Z0-9]/', '', strtolower(strip_tags($link)));
+  return '<li class="' . $class . '">' . $link . $menu . "</li>\n";
 }
