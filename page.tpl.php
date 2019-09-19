@@ -9,7 +9,6 @@
   <!--[if lt IE 7]>
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
-  <script src="https://kit.fontawesome.com/102128dbc9.js"></script>
 </head>
 
 <body>
@@ -46,17 +45,35 @@
       </div>
     </header>
 
-    <?php if ($header) : print $header;
+    <?php if ($header) : ?> <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <?php
+            print $header; ?>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <?php
     endif; ?>
+    <div id="menu-banner-links" class="px-5">
+      <?php print $menu_banner ?>
+    </div>
+
     <div id="container" class="container-fluid">
-      <div id="body" class="row pt-5 px-5">
+      <div id="body" class="pt-5">
         <?php if ($left) : ?>
           <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
             <?php print $left ?>
           </div>
         <?php endif; ?>
 
-        <div id="center" class="col mx-4">
+        <div id="center" class="col">
           <?php //print $breadcrumb;
           ?>
           <?php if ($mission) : print '<div id="mission">' . $mission . '</div>';

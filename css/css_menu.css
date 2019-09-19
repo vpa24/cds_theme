@@ -229,9 +229,36 @@ nav {
     display: block;
     height: 4px;
     width: 20px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #fff;
     padding-top: 4px;
+    content: "";
+  }
+  .button.black:after,
+  .button.black:before {
+    border-top: 2px solid #0000;
+    border-bottom: 2px solid #0000;
+  }
+  .button.black:after {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    display: block;
+    height: 4px;
+    width: 20px;
+    padding-top: 4px;
+    content: "";
+  }
+  .button.black:before {
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: block;
+    height: 2px;
+    width: 20px;
     content: "";
   }
   .button:before {
@@ -244,7 +271,7 @@ nav {
     display: block;
     height: 2px;
     width: 20px;
-    background: #000;
+    background: #fff;
     content: "";
   }
   .button.menu-opened:after {
@@ -255,7 +282,7 @@ nav {
     border: 0;
     height: 2px;
     width: 19px;
-    background: #000;
+    background: #fff;
     padding: 0px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -265,7 +292,7 @@ nav {
   }
   .button.menu-opened:before {
     top: 23px;
-    background: #000;
+    background: #fff;
     width: 19px;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);

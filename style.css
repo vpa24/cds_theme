@@ -101,9 +101,17 @@ li.leaf {
   list-style-image: none;
 }
 .login-order li::before,
-#block-block-2 li::before {
+#block-block-2 li::before,
+#partner li::before {
   content: "•";
   color: #d3262b;
+}
+#partner li::before {
+  margin-left: -10px;
+  padding-right: 5px;
+}
+#partner {
+  padding-left: 5px !important;
 }
 #block-block-2 li:before {
   margin-left: -15px;
@@ -654,7 +662,6 @@ ul.secondary li.active a {
  */
 .node {
   border-bottom: 1px solid #e9eff3;
-  margin: 0 -26px 1.5em;
   padding-bottom: 1.5em;
 }
 
@@ -1117,9 +1124,6 @@ table.system-status-report tr.ok th {
   padding-right: 2em;
   padding-left: 8em;
 }
-#footer.row {
-  margin-top: 20px !important;
-}
 nav.primary ul {
   font-size: 18px !important;
 }
@@ -1173,6 +1177,9 @@ nav.primary ul {
     letter-spacing: 1px;
     text-decoration: none;
     color: #000;
+  }
+  .button {
+    top: 15px;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -1231,6 +1238,9 @@ nav.primary ul {
   .search-box[type="submit"] {
     margin-top: 0px !important;
   }
+  .button {
+    top: 15px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   h5 {
@@ -1255,6 +1265,9 @@ nav.primary ul {
   .search-box[type="submit"] {
     margin-top: 0px;
   }
+  .button {
+    top: 15px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   h5 {
@@ -1276,6 +1289,12 @@ nav.primary ul {
     margin-left: 0.7em !important;
     margin-right: 0.7em !important;
   }
+  .button {
+    top: 15px;
+  }
+}
+header#header {
+  z-index: 999;
 }
 .row {
   margin: 0 !important;
@@ -1416,26 +1435,27 @@ li.leaf {
   padding: 0px;
 }
 
-#block-menu-menu-banner-links h5 {
+#menu-banner-links h5,
+#block-block-4 h5 {
   display: none;
 }
 
-#block-menu-menu-banner-links {
+#menu-banner-links {
   height: 45px;
   width: 100%;
   background: #00193b;
   opacity: 0.8;
-  margin-top: -45px;
+  margin-top: -65px;
 }
-#block-menu-menu-banner-links ul li:first-child {
+#menu-banner-links ul li:first-child {
   float: left;
   padding-left: 0px;
 }
-#block-menu-menu-banner-links ul li {
+#menu-banner-links ul li {
   float: left;
   padding-left: 25px;
 }
-#block-menu-menu-banner-links ul li a {
+#menu-banner-links ul li a {
   color: #fff;
   line-height: 45px;
   font-weight: 500;
@@ -1458,6 +1478,9 @@ li.leaf.last.myaccount::before {
 .bg-blue {
   background: #003567;
 }
+#ceo-content {
+  margin: 0 1.5em 0 2.8em !important;
+}
 #ceo-content h4 {
   letter-spacing: -1px;
 }
@@ -1471,6 +1494,11 @@ li.leaf.last.myaccount::before {
 }
 #ceo-content span {
   font-size: 15px;
+}
+#ceo-2.col-9 {
+  -ms-flex: 0 0 79%;
+  flex: 0 0 79%;
+  max-width: 79%;
 }
 .text-blue {
   color: #003567;
@@ -1495,4 +1523,81 @@ li.leaf.last.myaccount::before {
 }
 #edit-pass-2-wrapper.form-item {
   padding-right: 0;
+}
+#block-block-4 .my-3 {
+  position: relative;
+}
+
+#block-block-4 .child {
+  position: absolute;
+  top: 15%;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+#block-block-4 .logo-img {
+  border-right: 1px solid;
+  padding-right: 10px;
+}
+#block-user {
+  top: -5px;
+}
+.pb-custom {
+  padding-bottom: 1.7em !important;
+}
+.banner-img {
+  width: 100%;
+  height: 550px !important;
+}
+.light-yellow {
+  color: #ffad00;
+}
+.carousel-caption {
+  right: unset;
+  left: 10%;
+  height: 75%;
+  padding-top: 0px;
+  bottom: 50px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  height: 90%;
+}
+#carouselExampleControls .banner-text-1 {
+  font-size: 250%;
+}
+#carouselExampleControls .banner-text-2 {
+  padding-top: 12rem;
+}
+#carouselExampleControls .btn-danger {
+  background-color: #961919;
+  border-color: #961919;
+}
+#menu-banner-links ul ul li {
+  background: #003a70 !important;
+  padding: 5px 10px !important;
+}
+#menu-banner-links ul {
+  position: absolute;
+}
+#menu-banner-links ul li {
+  position: relative;
+}
+#menu-banner-links ul ul li {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2222;
+}
+#menu-banner-links ul li:hover ul li {
+  visibility: visible;
+  opacity: 1;
+}
+
+#menu-banner-links ul li a:hover {
+  background: #027ac6;
+  text-decoration: none;
+}
+#menu-banner-links ul li a {
+  padding: 0 8px;
 }

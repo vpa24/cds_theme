@@ -3,6 +3,11 @@ $default_class = 'clear-block block block-';
 ?>
 <div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="<?php if ($block->bid == 42) { // banner block
                                                                               print 'banner';
+                                                                            } elseif ($block->bid == 126) {
+                                                                              print 'd-inline-block col-4 blue-border-top mx-2 bg-white';
+                                                                              if ($user->uid > 0) {
+                                                                                print ' mx-5';
+                                                                              }
                                                                             } else {
                                                                               print $default_class . $block->module ?> 
 <?php if ($block->bid == 52) { //foodter Copyright

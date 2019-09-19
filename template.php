@@ -131,6 +131,7 @@ function cds_theme_theme()
 
   );
 }
+
 function cds_theme_preprocess_user_login_block(&$variables)
 {
   global $base_url;
@@ -168,6 +169,8 @@ function cds_theme_preprocess_page(&$vars)
   // Add the rendered output to the $main_menu_expanded variable
   $vars['primary_links'] =  menu_tree_output($main_menu_tree);
   $vars['menu_header'] =  str_replace('Buy', '<i class="fas fa-shopping-cart"></i>', $vars['primary_links']);
+  $banner_menu_tree = menu_tree_all_data('menu-banner-links');
+  $vars['menu_banner'] = menu_tree_output($banner_menu_tree);
 }
 function cds_theme_search_theme_form($form)
 {

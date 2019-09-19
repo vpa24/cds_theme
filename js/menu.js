@@ -54,11 +54,13 @@
       else cssmenu.addClass("dropdown");
       if (settings.sticky === true) cssmenu.css("position", "fixed");
       resizeFix = function() {
-        var mediasize = 1000;
-        if ($(window).width() > mediasize) {
+        var mediasize = $(window).width() + 17;
+        if (mediasize > 1000) {
           cssmenu.find("ul").show();
         }
-        if ($(window).width() <= mediasize) {
+        if (mediasize <= 1000) {
+          console.log(mediasize);
+          console.log("window" + $(window).width());
           cssmenu
             .find("ul")
             .hide()
