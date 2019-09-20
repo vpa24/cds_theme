@@ -1,0 +1,23 @@
+#ceo-content {
+  margin: 0 1.5em 1.5em 2.8em !important;
+  h4 {
+    letter-spacing: -1px;
+  }
+  h2 {
+    display: block;
+  }
+  .col-2 {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  span {
+    font-size: 15px;
+  }
+}
+
+#ceo-2.col-9 {
+  -ms-flex: 0 0 79%;
+  flex: 0 0 79%;
+  max-width: 79%;
+}
