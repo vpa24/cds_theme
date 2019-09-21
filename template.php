@@ -181,42 +181,7 @@ function cds_theme_search_theme_form($form)
   $output .= drupal_render($form);
   return $output;
 }
-function cds_theme_preprocess_user_register(&$variables)
-{
-  //name
-  unset($variables['form']['account']['name']['#description']);
-  unset($variables['form']['account']['name']['#title']);
-  $variables['form']['account']['name']['#attributes']['placeholder'] = 'Username';
-  $variables['form']['account']['name']['#weight'] = 1;
-  //company
-  unset($variables['form']['Account information']['profile_company_name']['#title']);
-  $variables['form']['Account information']['profile_company_name']['#attributes']['placeholder'] = 'Company name';
-  $variables['form']['Account information']['profile_company_name']['#weight'] = 2;
-  //mail
-  unset($variables['form']['account']['mail']['#title']);
-  unset($variables['form']['account']['mail']['#description']);
-  $variables['form']['account']['mail']['#attributes']['placeholder'] = 'Supermicro Salesperson Email';
-  //pass1
-  unset($variables['form']['account']['pass']['pass1']['#title']);
-  $variables['form']['account']['pass']['pass1']['#attributes']['placeholder'] = 'Password';
-  $variables['form']['account']['pass']['pass1']['#weight'] = 3;
-  //pass 2
-  unset($variables['form']['account']['pass']['pass2']['#title']);
-  $variables['form']['account']['pass']['pass2']['#attributes']['placeholder'] = 'Confirm Password';
-  $variables['form']['account']['pass']['pass2']['#weight'] = 4;
-  $variables['form']['account']['name']['#attributes']['class'] =
-    $variables['form']['account']['mail']['#attributes']['class'] =
-    $variables['form']['account']['pass']['pass1']['#attributes']['class'] =
-    $variables['form']['account']['pass']['pass2']['#attributes']['class'] =
-    $variables['form']['Account information']['profile_company_name']['#attributes']['class'] = 'form-control';
-  unset($variables['form']['account']['pass']['#description']);
-  unset($variables['form']['account']['#type']);
-  unset($variables['form']['Account information']['#type']);
-  $variables['form']['submit']['#attributes']['class'] = 'btn btn-danger mt-4 font-weight-bold';
-  $variables['form']['submit']['#value'] = 'Register';
 
-  $variables['rendered'] = drupal_render($variables['form']);
-}
 function cds_theme_menu_tree($tree)
 {
   return '<ul class="menu">' . $tree . '</ul>';

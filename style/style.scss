@@ -1,6 +1,7 @@
 @import "./links";
 @import "./ceo_content";
 @import "./partner";
+@import "./footer";
 body {
   color: black;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
@@ -1337,26 +1338,6 @@ table.system-status-report tr {
   width: 100%;
 }
 
-#footer {
-  background: #00163b;
-  width: 100%;
-  h5 {
-    color: #d3262b;
-    font-weight: bold;
-    &.text-center {
-      text-align: left !important;
-    }
-  }
-  ul li a {
-    color: #fff;
-    font-size: 14px;
-  }
-  .block-menu {
-    padding-right: 2em;
-    padding-left: 8em;
-  }
-}
-
 nav.primary ul {
   font-size: 18px !important;
 }
@@ -1852,4 +1833,9 @@ li.leaf.last.myaccount {
       padding: 0 8px;
     }
   }
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
 }

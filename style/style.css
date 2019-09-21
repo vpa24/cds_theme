@@ -9,7 +9,7 @@
 }
 
 #ceo-content {
-  margin: 0 1.5em 1.5em 2.8em !important;
+  margin: 2.8em 1.5em 1.5em 2.8em !important;
 }
 
 #ceo-content h4 {
@@ -54,6 +54,7 @@
 #block-user-0 .child {
   line-height: 40px;
   letter-spacing: 0px;
+  vertical-align: middle;
 }
 
 #partner {
@@ -65,6 +66,48 @@
   color: #d3262b;
   margin-left: -10px;
   padding-right: 5px;
+}
+
+#footer {
+  background: #00163b;
+  width: 100%;
+}
+
+#footer h5 {
+  color: #d3262b;
+  font-weight: bold;
+}
+
+#footer h5.text-center {
+  text-align: left !important;
+  margin-left: -10px;
+}
+
+#footer ul li a {
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .block-menu {
+  padding-right: 2em;
+  padding-left: 8em;
+  padding-top: 2em;
+}
+
+#footer #block-menu-menu-social-media h5,
+#footer #block-menu-menu-social-media-2 h5 {
+  display: none;
+}
+
+#footer ul.social-media {
+  padding-top: 5px;
+  padding-left: 0px;
+  margin-left: -55px;
+  margin-bottom: 0px;
+}
+
+#footer .social-media li {
+  display: inline-block;
 }
 
 body {
@@ -1372,30 +1415,6 @@ table.system-status-report tr.ok th {
   width: 100%;
 }
 
-#footer {
-  background: #00163b;
-  width: 100%;
-}
-
-#footer h5 {
-  color: #d3262b;
-  font-weight: bold;
-}
-
-#footer h5.text-center {
-  text-align: left !important;
-}
-
-#footer ul li a {
-  color: #fff;
-  font-size: 14px;
-}
-
-#footer .block-menu {
-  padding-right: 2em;
-  padding-left: 8em;
-}
-
 nav.primary ul {
   font-size: 18px !important;
 }
@@ -1904,5 +1923,11 @@ li.leaf.last.myaccount::before {
 #menu-banner-links ul li a:hover {
   background: #027ac6;
   text-decoration: none;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
 }
 /*# sourceMappingURL=style.css.map */

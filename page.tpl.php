@@ -66,14 +66,14 @@
     </div>
 
     <div id="container" class="container-fluid">
-      <div id="body" class="pt-5">
+      <div id="body" class="row">
         <?php if ($left) : ?>
           <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
             <?php print $left ?>
           </div>
         <?php endif; ?>
 
-        <div id="center" class="col">
+        <div id="center" class="col mx-4">
           <?php //print $breadcrumb;
           ?>
           <?php if ($mission) : print '<div id="mission">' . $mission . '</div>';
@@ -94,6 +94,7 @@
 
         <?php if ($right) : ?>
           <div id="sidebar-right" class="col-12 col-md-3 col-lg-2 mr-3">
+            <?php if (!$left && $search_box) : ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
             <?php print $right ?>
           </div>
         <?php endif; ?>
