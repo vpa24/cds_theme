@@ -6,7 +6,7 @@
   }
 
   header .header-main.stuck {
-    background-color: white;
+    background: none;
   }
   header.header-v3 .header-main {
     padding: 0;
@@ -15,8 +15,8 @@
     padding-right: 20px;
   }
 }
-header.header-v3 {
-  margin-top: 1px;
+header#header {
+  position: absolute;
 }
 .p-relative {
   position: relative !important;

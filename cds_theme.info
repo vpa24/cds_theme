@@ -5,14 +5,17 @@ core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/header.css
 stylesheets[all][] = css/bootstrap.css
-stylesheets[all][] = css/css_menu.css
-stylesheets[all][] = style.css
+stylesheets[all][] = style/style.css
 stylesheets[print][] = print.css
 
+scripts[] = js/jquery-3.4.1.min.js
+scripts[] = js/jquery.cookie.js
 scripts[] = js/popper.min.js
 scripts[] = js/bootstrap.min.js
-scripts[] = js/animate.js
+scripts[] = js/font-awesome.js
 scripts[] = js/menu.js
+scripts[] = js/scroll.js
+
 ; Information added by Drupal.org packaging script on 2016-02-24
 version = "6.38"
 project = "drupal"

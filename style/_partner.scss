@@ -1,0 +1,25 @@
+#block-user-0 {
+  padding: 15px 0;
+  h5 {
+    font-weight: bold;
+  }
+  img.logo-img {
+    border-right: 1px solid #000;
+    padding-right: 1em;
+  }
+  .child {
+    line-height: 40px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+  }
+}
+
+#partner {
+  li::before {
+    content: "•";
+    color: #d3262b;
+    margin-left: -10px;
+    padding-right: 5px;
+  }
+  padding-left: 5px !important;
+}

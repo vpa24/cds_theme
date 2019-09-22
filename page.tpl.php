@@ -9,13 +9,11 @@
   <!--[if lt IE 7]>
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
-  <script src="https://kit.fontawesome.com/102128dbc9.js"></script>
 </head>
 
 <body>
   <div id="wrapper">
-
-    <div id="header" class="header-v3 enterprise">
+    <header id="header" class="header-v3 enterprise">
       <div class="header-main gv-sticky-menu front-page stuck">
         <div class="bb-container">
           <div class="header-main-inner p-relative row">
@@ -23,19 +21,19 @@
             if ($logo || $site_title) {
               if ($logo) {
                 global $base_url;
-                print '<div class="logo col-md-2 col-xs-6 branding"><a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a></div>';
+                print '<div class="col-2 mt-2"><a href="' . $base_url . '"><img src="' . check_url($logo) . '" alt="' . $site_title . '" id="logo" width="128px" /></a></div>';
               }
             }
             ?>
-            <div class="col-md-10 col-xs-6">
+            <div class="col">
               <div class="main-menu">
                 <div class="navigation area-main-menu">
                   <div class="gva-search-region search-region"><?php print $search_box ?></div>
-                  <nav id="cssmenu">
+                  <nav id="cssmenu" class="pr-4">
                     <div id="head-mobile"></div>
                     <div class="button"></div>
                     <?php
-                    print $main_menu_expanded;
+                    print $menu_header;
                     ?>
                   </nav>
                 </div>
@@ -44,11 +42,30 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <?php if ($header) : print $header;
+    <?php if ($header) : ?> <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <?php
+            print $header; ?>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <?php
     endif; ?>
-    <div id="container" class="container-fluid">
+    <?php if ($user->uid > 0) { ?>
+      <div id="menu-banner-links" class="px-5">
+        <?php print $menu_banner ?>
+      </div>
+    <?php }
+    ?> <div id="container" class="container-fluid">
       <div id="body" class="row">
         <?php if ($left) : ?>
           <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
@@ -84,9 +101,11 @@
 
       </div>
     </div>
-  </div>
 
-  <div class="row py-5 d-flex justify-content-center" id="footer">
-    <?php print $footer_message . $footer ?>
+    <footer class="row py-5 d-flex justify-content-center" id="footer">
+      <?php print $footer_message . $footer ?>
+    </footer>
   </div>
 </body>
+
+</html>
