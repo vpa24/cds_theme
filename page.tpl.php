@@ -13,7 +13,6 @@
 
 <body>
   <div id="wrapper">
-
     <header id="header" class="header-v3 enterprise">
       <div class="header-main gv-sticky-menu front-page stuck">
         <div class="bb-container">
@@ -61,11 +60,12 @@
       </div>
     <?php
     endif; ?>
-    <div id="menu-banner-links" class="px-5">
-      <?php print $menu_banner ?>
-    </div>
-
-    <div id="container" class="container-fluid">
+    <?php if ($user->uid > 0) { ?>
+      <div id="menu-banner-links" class="px-5">
+        <?php print $menu_banner ?>
+      </div>
+    <?php }
+    ?> <div id="container" class="container-fluid">
       <div id="body" class="row">
         <?php if ($left) : ?>
           <div id="sidebar-left" class="sidebar col-4 col-sm-3 col-md-3 col-lg-2 ml-3">
@@ -101,9 +101,11 @@
 
       </div>
     </div>
-  </div>
 
-  <div class="row py-5 d-flex justify-content-center" id="footer">
-    <?php print $footer_message . $footer ?>
+    <footer class="row py-5 d-flex justify-content-center" id="footer">
+      <?php print $footer_message . $footer ?>
+    </footer>
   </div>
 </body>
+
+</html>

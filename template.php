@@ -200,3 +200,17 @@ function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail 
   $class .= ' ' . preg_replace('/[^a-zA-Z0-9]/', '', strtolower(strip_tags($link)));
   return '<li class="' . $class . '">' . $link . $menu . "</li>\n";
 }
+function cds_theme_menu_item_link($link)
+{
+  if (
+    $link['menu_name'] == 'menu-aboutusfooter' ||
+    $link['menu_name'] = 'menu-newsfooter' ||
+    $link['menu_name'] = 'menu-resourcesfooter' ||
+    $link['menu_name'] = 'menu-connectfollowfooter' ||
+    $link['menu_name'] = 'menu-social-media' ||
+    $link['menu_name'] = 'menu-social-media-2'
+  ) {
+    $link['localized_options']['attributes']['target'] = '_blank';
+  }
+  return l($link['title'], $link['href'], $link['localized_options']);
+}

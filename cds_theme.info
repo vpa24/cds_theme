@@ -5,7 +5,6 @@ core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/header.css
 stylesheets[all][] = css/bootstrap.css
-stylesheets[all][] = css/css_menu.css
 stylesheets[all][] = style/style.css
 stylesheets[print][] = print.css
 

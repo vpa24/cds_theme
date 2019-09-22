@@ -55,12 +55,10 @@
       if (settings.sticky === true) cssmenu.css("position", "fixed");
       resizeFix = function() {
         var mediasize = $(window).width() + 17;
-        if (mediasize > 1000) {
+        if (mediasize > 992) {
           cssmenu.find("ul").show();
         }
-        if (mediasize <= 1000) {
-          console.log(mediasize);
-          console.log("window" + $(window).width());
+        if (mediasize <= 992) {
           cssmenu
             .find("ul")
             .hide()
