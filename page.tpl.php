@@ -86,7 +86,7 @@
           endif; ?>
           <?php if ($tabs2) : print '<ul class="tabs secondary">' . $tabs2 . '</ul>';
           endif; ?>
-          <?php if ($show_messages && $messages) : print $messages;
+          <?php if ($show_messages && $messages && $user->uid > 0) : print $messages;
           endif; ?>
           <?php print $help; ?>
           <?php print $content ?>

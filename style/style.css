@@ -95,6 +95,14 @@
   padding-top: 3em;
 }
 
+#footer .block-menu:first-child {
+  padding-left: 0px !important;
+}
+
+#footer #block-menu-menu-connectfollowfooter {
+  padding-right: 0px !important;
+}
+
 #footer #block-menu-menu-social-media h5,
 #footer #block-menu-menu-social-media-2 h5 {
   display: none;

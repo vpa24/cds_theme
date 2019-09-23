@@ -1,5 +1,9 @@
 <div class="row">
     <div class="col-9 text-center d-inline-block custom-block-user-login blue-border-top mt-5 bg-white mx-auto" id="block-user">
+        <?php
+        $mesgg = theme_status_messages();
+        print $mesgg;
+        ?>
         <div class="d-inline-block col-5">
             <?php if (!empty($block->subject)) : ?>
                 <h1 class="text-center font-weight-bold mb-4"><?php print $block->subject ?></h1>
