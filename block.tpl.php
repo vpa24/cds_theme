@@ -5,8 +5,8 @@ $default_class = 'clear-block block block-';
                                                                               print 'banner';
                                                                             } else {
                                                                               print $default_class . $block->module ?> 
-<?php if ($block->bid == 52) { //foodter Copyright
-    print 'col-md-7 text-center';
+<?php if ($block->bid == 52) { //footer Copyright
+    print 'col-12';
   } elseif ($block->bid == 74) { //banner menu
     print 'px-5';
   }
