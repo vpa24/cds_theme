@@ -119,16 +119,11 @@ function cds_theme_theme()
   return array(
     'user_login_block' => array(
       'template' => 'user-login-block',
-      'arguments' => array('form' => NULL),
+      'arguments' => array('form' => null),
     ),
     'search_theme_form' => array(
-      'arguments' => array('form' => NULL),
+      'arguments' => array('form' => null),
     ),
-    'user_register' => array(
-      'template' => 'user-register',
-      'arguments' => array('form' => NULL),
-    ),
-
   );
 }
 
@@ -186,7 +181,7 @@ function cds_theme_menu_tree($tree)
 {
   return '<ul class="menu">' . $tree . '</ul>';
 }
-function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail = FALSE, $extra_class = NULL)
+function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail = false, $extra_class = null)
 {
 
   $class = ($menu ? 'expanded' : ($has_children ? 'collapsed' : 'leaf'));

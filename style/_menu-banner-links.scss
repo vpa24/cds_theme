@@ -1,0 +1,48 @@
+#menu-banner-links {
+  height: 45px;
+  width: 100%;
+  background: #00193b;
+  opacity: 0.8;
+  margin-top: -65px;
+  position: relative;
+  z-index: 9;
+  h5 {
+    display: none;
+  }
+  ul {
+    position: absolute;
+    li {
+      float: left;
+      padding-left: 25px;
+      position: relative;
+      &:hover ul li {
+        visibility: visible;
+        opacity: 1;
+      }
+      a {
+        &:hover {
+          background: #027ac6;
+          text-decoration: none;
+        }
+        padding: 0 8px;
+      }
+
+      &:first-child {
+        float: left;
+        padding-left: 0px;
+      }
+
+      a {
+        color: #fff;
+        line-height: 45px;
+        font-weight: 500;
+      }
+    }
+    ul li {
+      background: #003a70 !important;
+      padding: 5px 10px !important;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
