@@ -119,16 +119,11 @@ function cds_theme_theme()
   return array(
     'user_login_block' => array(
       'template' => 'user-login-block',
-      'arguments' => array('form' => NULL),
+      'arguments' => array('form' => null),
     ),
     'search_theme_form' => array(
-      'arguments' => array('form' => NULL),
+      'arguments' => array('form' => null),
     ),
-    'user_register' => array(
-      'template' => 'user-register',
-      'arguments' => array('form' => NULL),
-    ),
-
   );
 }
 
@@ -149,7 +144,7 @@ function cds_theme_preprocess_user_login_block(&$variables)
   <div class="item-list">
   <ul class="login-order">
       <li class="first">
-      <a href=' . "$base_url/user/password" . ' title="Request new password via e-mail.">Forgot password</a>
+      <a href=' . "$base_url/user/password" . ' >Forgot password</a>
       </li>
       <li class="last">
       <a href=' . "$base_url/user/register" . ' title="Create a new user account.">Join us</a>
@@ -166,9 +161,10 @@ function cds_theme_preprocess_page(&$vars)
 {
   $vars['search_box'] = (theme_get_setting('toggle_search') ? '' : drupal_get_form('search_theme_form'));
   $main_menu_tree = menu_tree_all_data('primary-links');
-  // Add the rendered output to the $main_menu_expanded variable
+  // header menu
   $vars['primary_links'] =  menu_tree_output($main_menu_tree);
   $vars['menu_header'] =  str_replace('Buy', '<i class="fas fa-shopping-cart"></i>', $vars['primary_links']);
+  //banner menu
   $banner_menu_tree = menu_tree_all_data('menu-banner-links');
   $vars['menu_banner'] = menu_tree_output($banner_menu_tree);
 }
@@ -186,7 +182,7 @@ function cds_theme_menu_tree($tree)
 {
   return '<ul class="menu">' . $tree . '</ul>';
 }
-function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail = FALSE, $extra_class = NULL)
+function cds_theme_menu_item($link, $has_children, $menu = '', $in_active_trail = false, $extra_class = null)
 {
 
   $class = ($menu ? 'expanded' : ($has_children ? 'collapsed' : 'leaf'));

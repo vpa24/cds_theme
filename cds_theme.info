@@ -6,10 +6,10 @@ engine = phptemplate
 stylesheets[all][] = css/header.css
 stylesheets[all][] = css/bootstrap.css
 stylesheets[all][] = style/style.css
+stylesheets[all][] = style/media_screen.css
 stylesheets[print][] = print.css
 
 scripts[] = js/jquery-3.4.1.min.js
-scripts[] = js/jquery.cookie.js
 scripts[] = js/popper.min.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/font-awesome.js

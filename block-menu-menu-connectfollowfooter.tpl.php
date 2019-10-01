@@ -1,4 +1,4 @@
-<div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="block-menu">
+<div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="block-menu col-lg-3 col-md-3 col-md-6 col-6 mt-4">
     <h5 class=" text-center"><?php print $block->subject ?></h5>
     <?php print $block->content ?>
     <div class="footer-social">

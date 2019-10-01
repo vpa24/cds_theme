@@ -86,7 +86,7 @@
           endif; ?>
           <?php if ($tabs2) : print '<ul class="tabs secondary">' . $tabs2 . '</ul>';
           endif; ?>
-          <?php if ($show_messages && $messages) : print $messages;
+          <?php if ($show_messages && $messages && $user->uid > 0) : print $messages;
           endif; ?>
           <?php print $help; ?>
           <?php print $content ?>
@@ -101,9 +101,12 @@
 
       </div>
     </div>
-
-    <footer class="row py-5 d-flex justify-content-center" id="footer">
-      <?php print $footer_message . $footer ?>
+    <footer class="pb-3 d-flex justify-content-center" id="footer">
+      <div class="container">
+        <div class="row pt-5">
+          <?php print $footer_message . $footer ?>
+        </div>
+      </div>
     </footer>
   </div>
 </body>
